@@ -21,6 +21,10 @@ class CartModel extends ChangeNotifier {
     notifyListeners();
   }
 
+  void update(Item item) {
+    notifyListeners();
+  }
+
   Item getByPosition(int position) {
     return _items.elementAt(position);
   }

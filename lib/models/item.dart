@@ -1,6 +1,12 @@
+import 'package:uuid/uuid.dart';
+
 class Item {
-  int id;
+  String id = const Uuid().v4();
   String name;
 
-  Item(this.id, this.name);
+  Item(String? id, this.name) {
+    if (id != null) {
+      this.id = id;
+    }
+  }
 }
