@@ -4,7 +4,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/models/cart.dart';
-import 'package:flutter_todo_app/screens/task.dart';
 import 'package:flutter_todo_app/screens/task_list.dart';
 import 'package:provider/provider.dart';
 
@@ -24,7 +23,6 @@ class MyApp extends StatelessWidget {
           initialRoute: '/tasks/',
           routes: {
             '/tasks/': (context) => const TaskList(),
-            '/task/': (context) => const Task(),
           },
         ));
   }

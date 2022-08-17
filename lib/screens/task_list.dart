@@ -18,9 +18,10 @@ class TaskList extends StatelessWidget {
             icon: const Icon(Icons.add_box),
             onPressed: () {
               Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Task()),
-              );
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Task(-1),
+                  ));
             },
           )
         ],
@@ -58,21 +59,29 @@ class _TaskListItem extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: LimitedBox(
         maxHeight: 48,
-        child: Row(
-          children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: Container(
-                  // color: item.color,
-                  ),
-            ),
-            const SizedBox(width: 24),
-            Expanded(
-              child: Text(item.name, style: textTheme),
-            ),
-            const SizedBox(width: 24),
-            // _AddButton(item: item),
-          ],
+        child: GestureDetector(
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Task(index),
+                ));
+          },
+          child: Row(
+            children: [
+              AspectRatio(
+                aspectRatio: 1,
+                child: Container(
+                    // color: item.color,
+                    ),
+              ),
+              const SizedBox(width: 24),
+              Expanded(
+                child: Text(item.name, style: textTheme),
+              ),
+              const SizedBox(width: 24),
+            ],
+          ),
         ),
       ),
     );
